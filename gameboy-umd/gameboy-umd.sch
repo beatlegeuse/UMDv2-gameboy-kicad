@@ -1,0 +1,611 @@
+EESchema Schematic File Version 4
+LIBS:gameboy-umd-cache
+EELAYER 29 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Gameboy UMDv2 Cartridge Adapter"
+Date "2020-03-05"
+Rev "2.0"
+Comp ""
+Comment1 "https://github.com/beatlegeuse/UMDv2-gameboy-kicad"
+Comment2 "Licensed under CERN OHL v.1.2"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L db-vgparts:UMDv2-CONN CON101
+U 2 1 5C89A1F1
+P 8450 5150
+F 0 "CON101" H 8450 8600 50  0000 L CNN
+F 1 "UMDv2-CONN" H 8450 8500 50  0000 L CNN
+F 2 "db-thparts:UMD-CONN-DIP64" H 9150 9000 60  0001 C CNN
+F 3 "http://suddendocs.samtec.com/prints/ssw-1xx-xx-xxx-x-xx-xxx-xx-mkt.pdf" H 10300 8800 60  0001 C CNN
+F 4 "SAM1211-32-ND" H 8900 8700 60  0001 C CNN "Digikey"
+F 5 "CONN RCPT 32POS 0.1 GOLD PCB" H 9250 8900 60  0001 C CNN "Description"
+	2    8450 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L db-sem:MCP23008T-E_SS U101
+U 1 1 5C89E485
+P 3600 6100
+F 0 "U101" H 3700 6250 50  0000 C CNN
+F 1 "MCP23008T-E_SS" H 3925 6176 50  0000 C CNN
+F 2 "db-smt:SSOP-20" H 4075 6800 60  0001 C CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en021920" H 5050 6700 60  0001 C CNN
+F 4 "MCP23008T-E/SSCT-ND" H 4300 6600 60  0001 C CNN "Digikey"
+F 5 "IC I/O EXPANDER 8BIT I2C 20-SSOP" H 4450 6500 60  0001 C CNN "Description"
+	1    3600 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L db-passives:C_0603 C101
+U 1 1 5C89E738
+P 1650 6800
+F 0 "C101" H 1765 6846 50  0000 L CNN
+F 1 "0.1uF/50V" H 1765 6755 50  0000 L CNN
+F 2 "db-smt:0603" H 2150 6700 30  0001 C CNN
+F 3 "" H 1675 6900 60  0001 C CNN
+F 4 "478-5052-1-ND" H 2075 6775 60  0001 C CNN "Digikey"
+F 5 "CAP CER 0.1UF 50V X7R 0603" H 2075 6875 60  0001 C CNN "Description"
+	1    1650 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L db-sem:MCP23008T-E_SS U101
+U 2 1 5C89E76A
+P 1250 6550
+F 0 "U101" H 1000 6750 50  0000 C CNN
+F 1 "MCP23008T-E_SS" H 900 6650 50  0000 C CNN
+F 2 "db-smt:SSOP-20" H 1725 7250 60  0001 C CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en021920" H 2700 7150 60  0001 C CNN
+F 4 "MCP23008T-E/SSCT-ND" H 1950 7050 60  0001 C CNN "Digikey"
+F 5 "IC I/O EXPANDER 8BIT I2C 20-SSOP" H 2100 6950 60  0001 C CNN "Description"
+	2    1250 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5C89E940
+P 1350 7300
+F 0 "#PWR0102" H 1350 7050 50  0001 C CNN
+F 1 "GND" H 1355 7127 50  0000 C CNN
+F 2 "" H 1350 7300 50  0001 C CNN
+F 3 "" H 1350 7300 50  0001 C CNN
+	1    1350 7300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 6250 1350 6300
+Wire Wire Line
+	1350 7300 1350 7250
+Wire Wire Line
+	1350 6300 1650 6300
+Wire Wire Line
+	1650 6300 1650 6650
+Connection ~ 1350 6300
+Wire Wire Line
+	1350 6300 1350 6350
+Wire Wire Line
+	1350 7250 1650 7250
+Wire Wire Line
+	1650 7250 1650 6950
+Connection ~ 1350 7250
+Wire Wire Line
+	1350 7250 1350 7200
+Wire Wire Line
+	3400 6200 2850 6200
+Wire Wire Line
+	3400 6300 2850 6300
+Text Label 2850 6200 0    50   ~ 0
+SCL
+Text Label 2850 6300 0    50   ~ 0
+SDA
+$Comp
+L power:GND #PWR0101
+U 1 1 5C8BE6E7
+P 4600 7250
+F 0 "#PWR0101" H 4600 7000 50  0001 C CNN
+F 1 "GND" H 4605 7077 50  0000 C CNN
+F 2 "" H 4600 7250 50  0001 C CNN
+F 3 "" H 4600 7250 50  0001 C CNN
+	1    4600 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5C8BE72C
+P 3250 7250
+F 0 "#PWR0103" H 3250 7000 50  0001 C CNN
+F 1 "GND" H 3255 7077 50  0000 C CNN
+F 2 "" H 3250 7250 50  0001 C CNN
+F 3 "" H 3250 7250 50  0001 C CNN
+	1    3250 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 6500 3250 6500
+Wire Wire Line
+	3250 6500 3250 6600
+Wire Wire Line
+	3400 6600 3250 6600
+Connection ~ 3250 6600
+Wire Wire Line
+	3250 6600 3250 6700
+Wire Wire Line
+	3400 6700 3250 6700
+Connection ~ 3250 6700
+Wire Wire Line
+	3250 6700 3250 6800
+Wire Wire Line
+	3400 6800 3250 6800
+Connection ~ 3250 6800
+Wire Wire Line
+	3250 6800 3250 6900
+Wire Wire Line
+	3400 6900 3250 6900
+Connection ~ 3250 6900
+Wire Wire Line
+	3250 6900 3250 7250
+Wire Wire Line
+	4450 6800 4600 6800
+Wire Wire Line
+	4600 6700 4600 6800
+Connection ~ 4600 6800
+Wire Wire Line
+	4450 6600 4600 6600
+Wire Wire Line
+	4600 6600 4600 6700
+Wire Wire Line
+	4450 6500 4600 6500
+Wire Wire Line
+	4600 6500 4600 6600
+Connection ~ 4600 6600
+Wire Wire Line
+	4450 6400 4600 6400
+Wire Wire Line
+	4600 6400 4600 6500
+Connection ~ 4600 6500
+Wire Wire Line
+	4450 6300 4600 6300
+Wire Wire Line
+	4600 6300 4600 6400
+Connection ~ 4600 6400
+Wire Wire Line
+	4450 6200 4600 6200
+Wire Wire Line
+	4600 6200 4600 6300
+Connection ~ 4600 6300
+$Comp
+L power:+3.3V #PWR0105
+U 1 1 5C8C00D8
+P 1350 6250
+F 0 "#PWR0105" H 1350 6100 50  0001 C CNN
+F 1 "+3.3V" H 1365 6423 50  0000 C CNN
+F 2 "" H 1350 6250 50  0001 C CNN
+F 3 "" H 1350 6250 50  0001 C CNN
+	1    1350 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0106
+U 1 1 5C8C0325
+P 3050 1850
+F 0 "#PWR0106" H 3050 1700 50  0001 C CNN
+F 1 "+3.3V" H 3065 2023 50  0000 C CNN
+F 2 "" H 3050 1850 50  0001 C CNN
+F 3 "" H 3050 1850 50  0001 C CNN
+	1    3050 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1950 3050 1950
+Wire Wire Line
+	3050 1950 3050 1850
+Text Notes 4800 6400 0    50   ~ 0
+Gameboy ID = 0x05
+$Comp
+L power:+3.3V #PWR0104
+U 1 1 5E44F1F9
+P 4700 6100
+F 0 "#PWR0104" H 4700 5950 50  0001 C CNN
+F 1 "+3.3V" H 4715 6273 50  0000 C CNN
+F 2 "" H 4700 6100 50  0001 C CNN
+F 3 "" H 4700 6100 50  0001 C CNN
+	1    4700 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 6800 4600 7250
+Wire Wire Line
+	4700 6100 4700 6700
+Wire Wire Line
+	4700 6900 4450 6900
+$Comp
+L gameboy-vgparts:GB-CONN CON102
+U 1 1 5E624ABC
+P 5150 2750
+F 0 "CON102" H 5450 2939 60  0000 C CNN
+F 1 "GB-CONN" H 5450 2833 60  0000 C CNN
+F 2 "gameboy-vgparts:GB-CONN" H 5450 2833 60  0001 C CNN
+F 3 "" H 5250 2800 60  0001 C CNN
+	1    5150 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2850 4400 2850
+Text Label 4400 2850 0    50   ~ 0
+A0
+Wire Wire Line
+	4950 2950 4400 2950
+Text Label 4400 2950 0    50   ~ 0
+A1
+Wire Wire Line
+	4950 3050 4400 3050
+Text Label 4400 3050 0    50   ~ 0
+A2
+Wire Wire Line
+	4950 3150 4400 3150
+Text Label 4400 3150 0    50   ~ 0
+A3
+Wire Wire Line
+	4950 3250 4400 3250
+Text Label 4400 3250 0    50   ~ 0
+A4
+Wire Wire Line
+	4950 3350 4400 3350
+Text Label 4400 3350 0    50   ~ 0
+A5
+Wire Wire Line
+	4950 3450 4400 3450
+Text Label 4400 3450 0    50   ~ 0
+A6
+Wire Wire Line
+	4950 3550 4400 3550
+Text Label 4400 3550 0    50   ~ 0
+A7
+Wire Wire Line
+	4950 3650 4400 3650
+Text Label 4400 3650 0    50   ~ 0
+A8
+Wire Wire Line
+	4950 3750 4400 3750
+Text Label 4400 3750 0    50   ~ 0
+A9
+Wire Wire Line
+	4950 3850 4400 3850
+Text Label 4400 3850 0    50   ~ 0
+A10
+Wire Wire Line
+	4950 3950 4400 3950
+Text Label 4400 3950 0    50   ~ 0
+A11
+Wire Wire Line
+	4950 4050 4400 4050
+Text Label 4400 4050 0    50   ~ 0
+A12
+Wire Wire Line
+	4950 4150 4400 4150
+Text Label 4400 4150 0    50   ~ 0
+A13
+Wire Wire Line
+	4950 4250 4400 4250
+Text Label 4400 4250 0    50   ~ 0
+A14
+Wire Wire Line
+	4950 4350 4400 4350
+Text Label 4400 4350 0    50   ~ 0
+A15
+$Comp
+L power:GND #PWR0107
+U 1 1 5E665766
+P 6250 4550
+F 0 "#PWR0107" H 6250 4300 50  0001 C CNN
+F 1 "GND" H 6255 4377 50  0000 C CNN
+F 2 "" H 6250 4550 50  0001 C CNN
+F 3 "" H 6250 4550 50  0001 C CNN
+	1    6250 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 4350 5950 4350
+Wire Wire Line
+	5950 2850 6250 2850
+Wire Wire Line
+	6250 2850 6250 2650
+Wire Wire Line
+	6250 4550 6250 4350
+NoConn ~ 5950 2950
+NoConn ~ 5950 4250
+Wire Wire Line
+	5950 4150 6500 4150
+Text Label 6500 4150 2    50   ~ 0
+~RESET
+Wire Wire Line
+	5950 4050 6500 4050
+Text Label 6500 4050 2    50   ~ 0
+D7
+Wire Wire Line
+	5950 3950 6500 3950
+Text Label 6500 3950 2    50   ~ 0
+D6
+Wire Wire Line
+	5950 3850 6500 3850
+Text Label 6500 3850 2    50   ~ 0
+D5
+Wire Wire Line
+	5950 3750 6500 3750
+Text Label 6500 3750 2    50   ~ 0
+D4
+Wire Wire Line
+	5950 3650 6500 3650
+Text Label 6500 3650 2    50   ~ 0
+D3
+Wire Wire Line
+	5950 3550 6500 3550
+Text Label 6500 3550 2    50   ~ 0
+D2
+Wire Wire Line
+	5950 3450 6500 3450
+Text Label 6500 3450 2    50   ~ 0
+D1
+Wire Wire Line
+	5950 3350 6500 3350
+Text Label 6500 3350 2    50   ~ 0
+D0
+Wire Wire Line
+	5950 3150 6500 3150
+Text Label 6500 3150 2    50   ~ 0
+~RD
+Wire Wire Line
+	5950 3050 6500 3050
+Text Label 6500 3050 2    50   ~ 0
+~WR
+Wire Wire Line
+	5950 3250 6500 3250
+Text Label 6500 3250 2    50   ~ 0
+CS
+$Comp
+L power:Vcart #PWR0108
+U 1 1 5E6C7714
+P 6250 2650
+F 0 "#PWR0108" H 6250 2500 50  0001 C CNN
+F 1 "Vcart" H 6267 2823 50  0000 C CNN
+F 2 "" H 6250 2650 50  0001 C CNN
+F 3 "" H 6250 2650 50  0001 C CNN
+	1    6250 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Vcart #PWR0109
+U 1 1 5E6D459C
+P 7550 1850
+F 0 "#PWR0109" H 7550 1700 50  0001 C CNN
+F 1 "Vcart" H 7567 2023 50  0000 C CNN
+F 2 "" H 7550 1850 50  0001 C CNN
+F 3 "" H 7550 1850 50  0001 C CNN
+	1    7550 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0110
+U 1 1 5E6D48BF
+P 7950 2050
+F 0 "#PWR0110" H 7950 1800 50  0001 C CNN
+F 1 "GND" H 7955 1877 50  0000 C CNN
+F 2 "" H 7950 2050 50  0001 C CNN
+F 3 "" H 7950 2050 50  0001 C CNN
+	1    7950 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 5E6D4BCE
+P 7950 5150
+F 0 "#PWR0111" H 7950 4900 50  0001 C CNN
+F 1 "GND" H 7955 4977 50  0000 C CNN
+F 2 "" H 7950 5150 50  0001 C CNN
+F 3 "" H 7950 5150 50  0001 C CNN
+	1    7950 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 2050 7950 1950
+Wire Wire Line
+	7950 1950 8250 1950
+Wire Wire Line
+	7950 5150 7950 5050
+Wire Wire Line
+	7950 5050 8250 5050
+$Comp
+L power:Vcart #PWR0112
+U 1 1 5E6D990D
+P 7550 4850
+F 0 "#PWR0112" H 7550 4700 50  0001 C CNN
+F 1 "Vcart" H 7567 5023 50  0000 C CNN
+F 2 "" H 7550 4850 50  0001 C CNN
+F 3 "" H 7550 4850 50  0001 C CNN
+	1    7550 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 2050 3450 2050
+Text Label 3450 2050 2    50   ~ 0
+SCL
+Wire Wire Line
+	2900 2150 3450 2150
+Text Label 3450 2150 2    50   ~ 0
+SDA
+$Comp
+L db-vgparts:UMDv2-CONN CON101
+U 1 1 5C89A17D
+P 2700 5150
+F 0 "CON101" H 2845 8617 50  0000 C CNN
+F 1 "UMDv2-CONN" H 2845 8526 50  0000 C CNN
+F 2 "db-thparts:UMD-CONN-DIP64" H 3400 9000 60  0001 C CNN
+F 3 "http://suddendocs.samtec.com/prints/ssw-1xx-xx-xxx-x-xx-xxx-xx-mkt.pdf" H 4550 8800 60  0001 C CNN
+F 4 "SAM1211-32-ND" H 3150 8700 60  0001 C CNN "Digikey"
+F 5 "CONN RCPT 32POS 0.1 GOLD PCB" H 3500 8900 60  0001 C CNN "Description"
+	1    2700 5150
+	-1   0    0    -1  
+$EndComp
+NoConn ~ 2900 2250
+NoConn ~ 2900 2350
+NoConn ~ 2900 2450
+NoConn ~ 2900 2750
+NoConn ~ 2900 2850
+NoConn ~ 2900 3350
+NoConn ~ 2900 3550
+NoConn ~ 2900 3650
+NoConn ~ 2900 3750
+NoConn ~ 2900 4750
+NoConn ~ 2900 4850
+NoConn ~ 2900 4950
+NoConn ~ 2900 5050
+Wire Wire Line
+	2900 2550 3450 2550
+Text Label 3450 2550 2    50   ~ 0
+A15
+Wire Wire Line
+	2900 2650 3450 2650
+Text Label 3450 2650 2    50   ~ 0
+A13
+Wire Wire Line
+	2900 2950 3450 2950
+Text Label 3450 2950 2    50   ~ 0
+~WR
+Wire Wire Line
+	2900 3050 3450 3050
+Text Label 3450 3050 2    50   ~ 0
+A10
+Wire Wire Line
+	2900 3150 3450 3150
+Text Label 3450 3150 2    50   ~ 0
+A8
+Wire Wire Line
+	2900 3250 3450 3250
+Text Label 3450 3250 2    50   ~ 0
+D0
+Wire Wire Line
+	2900 3450 3450 3450
+Text Label 3450 3450 2    50   ~ 0
+D2
+Wire Wire Line
+	2900 3850 3450 3850
+Text Label 3450 3850 2    50   ~ 0
+D6
+Wire Wire Line
+	2900 3950 3450 3950
+Text Label 3450 3950 2    50   ~ 0
+D4
+NoConn ~ 2900 4250
+NoConn ~ 2900 4350
+Wire Wire Line
+	2900 4050 3450 4050
+Text Label 3450 4050 2    50   ~ 0
+CS
+NoConn ~ 2900 4150
+Wire Wire Line
+	2900 4450 3450 4450
+Text Label 3450 4450 2    50   ~ 0
+A5
+Wire Wire Line
+	2900 4550 3450 4550
+Text Label 3450 4550 2    50   ~ 0
+A3
+Wire Wire Line
+	2900 4650 3450 4650
+Text Label 3450 4650 2    50   ~ 0
+A1
+NoConn ~ 8250 2150
+NoConn ~ 8250 2250
+NoConn ~ 8250 2350
+NoConn ~ 8250 2450
+NoConn ~ 8250 2750
+NoConn ~ 8250 3350
+NoConn ~ 8250 3450
+NoConn ~ 8250 3650
+NoConn ~ 8250 3750
+NoConn ~ 8250 4150
+NoConn ~ 8250 4350
+NoConn ~ 8250 4450
+NoConn ~ 8250 4850
+Wire Wire Line
+	8250 2550 7700 2550
+Text Label 7700 2550 0    50   ~ 0
+A14
+Wire Wire Line
+	8250 2650 7700 2650
+Text Label 7700 2650 0    50   ~ 0
+A12
+Wire Wire Line
+	8250 2850 7700 2850
+Text Label 7700 2850 0    50   ~ 0
+~RD
+Wire Wire Line
+	8250 2950 7700 2950
+Text Label 7700 2950 0    50   ~ 0
+A11
+Wire Wire Line
+	8250 3050 7700 3050
+Text Label 7700 3050 0    50   ~ 0
+A9
+Wire Wire Line
+	8250 3150 7700 3150
+Text Label 7700 3150 0    50   ~ 0
+A7
+Wire Wire Line
+	8250 3250 7700 3250
+Text Label 7700 3250 0    50   ~ 0
+D1
+Wire Wire Line
+	8250 3550 7700 3550
+Text Label 7700 3550 0    50   ~ 0
+D3
+Wire Wire Line
+	8250 3850 7700 3850
+Text Label 7700 3850 0    50   ~ 0
+D7
+Wire Wire Line
+	8250 3950 7700 3950
+Text Label 7700 3950 0    50   ~ 0
+D5
+Wire Wire Line
+	8250 4050 7700 4050
+Text Label 7700 4050 0    50   ~ 0
+~RESET
+Wire Wire Line
+	8250 4250 7700 4250
+Text Label 7700 4250 0    50   ~ 0
+A6
+Wire Wire Line
+	8250 4550 7700 4550
+Text Label 7700 4550 0    50   ~ 0
+A4
+Wire Wire Line
+	8250 4650 7700 4650
+Text Label 7700 4650 0    50   ~ 0
+A2
+Wire Wire Line
+	8250 4750 7700 4750
+Text Label 7700 4750 0    50   ~ 0
+A0
+Wire Wire Line
+	7550 4850 7550 4950
+Wire Wire Line
+	7550 4950 8250 4950
+Wire Wire Line
+	7550 1850 7550 2050
+Wire Wire Line
+	7550 2050 8250 2050
+NoConn ~ 9150 4850
+NoConn ~ 9150 4950
+NoConn ~ 9150 5050
+Connection ~ 4700 6700
+Wire Wire Line
+	4700 6700 4700 6900
+Wire Wire Line
+	4450 6700 4700 6700
+$EndSCHEMATC
